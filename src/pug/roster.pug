@@ -1,0 +1,115 @@
+doctype html
+html(lang='en')
+
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='Wrestling Roster Page')
+    meta(name='author', content='')
+
+    title ESW Roster
+
+    link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css')
+    include includes/css
+
+body
+  include includes/header
+  include includes/navbar
+  
+  // TODO: Need dynamic loading on wrestlers. This will be after the base site is put in place
+
+  // Champions
+  section.page-section.cta-roster(style='margin-top: 45px;')
+    .container
+      h2.section-heading.mb-4
+        span.section-heading-lower(style='font-weight: 400; font-size: 3rem') Champions
+
+  section.page-section
+    .container
+      .row.row-cols-1.row-cols-md-4.g-4
+        each wrestler in wrestlers
+          if wrestler.category === 'Champion'
+            .col
+              .card.text-center(style='height: 100%; display: flex; flex-direction: column; border-radius: 0.5rem; overflow: hidden;')
+                .image-wrapper(style='height: 180px; position: relative; overflow: hidden;')
+                  img.card-img-top(
+                    src=wrestler.image,
+                    alt=wrestler.name,
+                    id= `ch-${wrestler.image.split('/').pop().split('.')[0]}`,
+                    style='style="position: absolute; transform: translateX(-50%) TranslateY(10%) scale(1.2)"',
+                    onerror="this.onerror=null;this.src='assets/img/OIP.jpg';"
+                  )
+                if wrestler.description
+                  .card-body.p-2.d-flex.flex-column.justify-content-between(style='flex-grow: 1;')
+                    p.card-text.mb-2(style='font-size: 0.85rem;')= wrestler.description
+                    div.mt-auto
+                      h5.card-title.mb-0(style='font-size: 1rem;font-weight:bold;')= wrestler.name
+                else
+                  .card-body.p-2.d-flex.align-items-center.justify-content-center(style='flex-grow: 1;')
+                    h5.card-title.mb-0(style='font-size: 1rem;font-weight:bold;')= wrestler.name
+
+  // Champions
+  section.page-section.cta-roster(style='margin-top: 45px;')
+    .container
+      h2.section-heading.mb-4
+        span.section-heading-lower(style='font-weight: 400; font-size: 3rem') Wrestlers
+
+  // For Wrestlers
+  section.page-section
+    .container
+      .row.row-cols-1.row-cols-md-5.g-3
+        each wrestler in wrestlers
+          if wrestler.category === 'Wrestler'
+            .col
+              .card.text-center(style='height: 100%; display: flex; flex-direction: column; border-radius: 0.5rem; overflow: hidden;')
+                .image-wrapper(style='height: 180px; position: relative; overflow: hidden;')
+                  img.card-img-top(
+                    src=wrestler.image,
+                    alt=wrestler.name,
+                    id=wrestler.image.split('/').pop().split('.')[0],
+                    style='style="position: absolute; transform: translateX(-50%) TranslateY(10%) scale(1.4)"',
+                    onerror="this.onerror=null;this.src='assets/img/OIP.jpg';"
+                  )
+                .card-body.p-2.d-flex.flex-column.justify-content-between(style='flex-grow: 1;')
+                  if wrestler.description
+                    p.card-text.mb-2(style='font-size: 0.85rem;')= wrestler.description
+                    div.mt-auto
+                      h5.card-title.mb-0(style='font-size: 1rem; font-weight: bold;')= wrestler.name
+                  else
+                    .card-body.p-2.d-flex.align-items-center.justify-content-center(style='flex-grow: 1;')
+                      h5.card-title.mb-0(style='font-size: 1rem; font-weight: bold;')= wrestler.name
+
+  // Champions
+  section.page-section.cta-roster(style='margin-top: 45px;')
+    .container
+      h2.section-heading.mb-4
+        span.section-heading-lower(style='font-weight: 400; font-size: 3rem') Staff
+  
+  // For Staff
+  section.page-section
+    .container
+      .row.row-cols-1.row-cols-md-5.g-4
+        each wrestler in wrestlers
+          if wrestler.category === 'Staff'
+            .col
+              .card.text-center(style='height: 100%; display: flex; flex-direction: column; border-radius: 0.5rem; overflow: hidden;')
+                .image-wrapper(style='height: 180px; position: relative; overflow: hidden;')
+                  img.card-img-top(
+                    src=wrestler.image,
+                    alt=wrestler.name,
+                    id=wrestler.image.split('/').pop().split('.')[0],
+                    style='style="position: absolute; transform: translateX(-50%) TranslateY(10%) scale(1.2)"',
+                    onerror="this.onerror=null;this.src='assets/img/OIP.jpg';this.id='OIP'"
+                  )
+                .card-body.p-2.d-flex.flex-column.justify-content-between(style='flex-grow: 1;')
+                  if wrestler.description
+                    p.card-text.mb-2(style='font-size: 0.85rem;')= wrestler.description
+                    div.mt-auto
+                      h5.card-title.mb-0(style='font-size: 1rem; font-weight: bold;')= wrestler.name
+                  else
+                    .card-body.p-2.d-flex.align-items-center.justify-content-center(style='flex-grow: 1;')
+                      h5.card-title.mb-0(style='font-size: 1rem; font-weight: bold;')= wrestler.name
+
+include includes/footer
+include includes/scripts
