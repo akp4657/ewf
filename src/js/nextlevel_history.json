@@ -1,0 +1,38 @@
+[
+  {
+    "name": "CJ Settles",
+    "startDate": "11/01/2025",
+    "endDate": "",
+    "image": "assets/img/OIP.jpg"
+  },
+  {
+    "name": "Adam Wacker",
+    "startDate": "09/09/2025",
+    "endDate": "11/01/2025",
+    "image": "assets/img/OIP.jpg"
+  },
+  {
+    "name": "Darren Crowe (2)",
+    "startDate": "06/28/2025",
+    "endDate": "09/09/2025",
+    "image": "assets/img/OIP.jpg"
+  },
+  {
+    "name": "Don Freeze",
+    "startDate": "02/15/2025",
+    "endDate": "06/28/2025",
+    "image": "assets/img/OIP.jpg"
+  },
+  {
+    "name": "Darren Crowe",
+    "startDate": "03/23/2024",
+    "endDate": "02/15/2025",
+    "image": "assets/img/OIP.jpg"
+  },
+  {
+    "name": "Price Purgold",
+    "startDate": "09/02/2023",
+    "endDate": "03/23/2024",
+    "image": "assets/img/OIP.jpg"
+  }
+]

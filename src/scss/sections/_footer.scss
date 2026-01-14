@@ -1,3 +1,15 @@
 .footer {
-    background-color: fade-out($primary, 0.1);
+    background-color: $secondary; // Black background
+    border-top: 3px solid $primary; // Red top border
+    box-shadow: 0 -4px 8px rgba(220, 20, 60, 0.3); // Red glow upward
+
+    a {
+        transition: all 0.3s ease;
+        
+        &:hover {
+            color: $primary !important; // Red on hover
+            transform: scale(1.2);
+            text-shadow: 0 0 10px rgba(220, 20, 60, 0.8);
+        }
+    }
 }

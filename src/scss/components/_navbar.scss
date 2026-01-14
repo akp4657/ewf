@@ -1,22 +1,35 @@
 #mainNav {
-    background-color: fade-out($primary, 0.1);
+    background-color: $secondary; // Black background
     font-family: $headings-font-family;
+    border-bottom: 2px solid $primary; // Red border
+    box-shadow: 0 2px 8px rgba(220, 20, 60, 0.4); // Red glow
 
     .navbar-brand {
-        color: $secondary;
+        color: $white; // White text
+        font-weight: 900;
+        text-shadow: 2px 2px 4px rgba(220, 20, 60, 0.8); // Red text shadow
+        letter-spacing: 2px;
     }
 
     .navbar-nav {
         .nav-item {
             .nav-link {
-                color: fade-out($white, 0.3);
+                color: fade-out($white, 0.2); // White with slight fade
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: all 0.3s ease;
 
-                font-weight: 800;
+                &:hover {
+                    color: $primary; // Red on hover
+                    text-shadow: 0 0 8px rgba(220, 20, 60, 0.8);
+                }
             }
 
             &.active {
                 .nav-link {
-                    color: $secondary;
+                    color: $primary; // Red for active
+                    text-shadow: 0 0 10px rgba(220, 20, 60, 1);
                 }
             }
         }
@@ -26,16 +39,17 @@
         .navbar-nav {
             .nav-item {
                 .nav-link {
-                    font-size: 0.9rem;
+                    font-size: 1rem;
 
                     &:hover {
-                        color: fade-out($white, 0.6);
+                        color: $primary;
+                        transform: translateY(-2px); // Slight lift on hover
                     }
                 }
 
                 &.active {
                     .nav-link:hover {
-                        color: $secondary;
+                        color: $primary;
                     }
                 }
             }

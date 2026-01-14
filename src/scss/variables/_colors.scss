@@ -1,6 +1,11 @@
-// Variables
+// Variables - Extreme Wrestling Force
+// Color Priority: White, Red, Black
+// Note: $primary is used by Bootstrap for brand color (Red)
+// White is used as primary text/background color
 
-$primary: #b71010;
-$secondary: #2c2c2c;
-$modals: #fff;
-$bwa: #75378d
+$primary: #dc143c; // Crimson Red (Bootstrap primary/brand color)
+$secondary: #000000; // Black (Bootstrap secondary)
+$tertiary: #000000; // Black (additional)
+$white: #ffffff; // White (primary text/background)
+$modals: #ffffff; // White for modals/overlays
+$bwa: #75378d; // Keep for BWA page compatibility
